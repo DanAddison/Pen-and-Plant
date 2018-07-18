@@ -5,6 +5,8 @@ wp-content/backup-db/
 wp-content/languages/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
+wp-content/themes/storefrontiersman/assets/sass/maps
+wp-content/themes/storefrontiersman/style.css
 sitemap.xml
 *.log
 wp-content/cache/

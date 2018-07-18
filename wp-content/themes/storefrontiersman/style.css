@@ -1,7 +1,7 @@
 /*
-Theme Name:   	Storefrontiersman
-Theme URI:    	
-Author:       	Dan Addison
+Theme Name:     Storefrontiersman
+Theme URI:      
+Author:         Dan Addison
 Author URI:     https://danaddison.co.uk
 Template:     	storefront
 Description:  	This is a blank child theme for WooThemes StoreFront theme
@@ -22,3 +22,11 @@ Images License: GNU General Public License v2 or later
 /*
  * Add your own custom css below this text.
  */
+/*--------------------------------------------------------------
+ ## Variables
+ --------------------------------------------------------------*/
+.site-content {
+	background-color: #979191;
+}
+
+/*# sourceMappingURL=../storefrontiersman/assets/sass/maps/style.css.map */
