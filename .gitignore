@@ -52,11 +52,6 @@ node_modules/
 ehthumbs.db
 Thumbs.db
 
-# ignore Editor files
-*.sublime-project
-*.sublime-workspace
-*.komodoproject
-
 # ignore log files and databases
 *.log
 *.sql
@@ -106,8 +101,8 @@ Thumbs.db
 !wp-content/mu-plugins/example-mu-plugin/
 !wp-content/plugins/example-plugin/
 
-# track the relevant starter-theme or child-theme
+# track the relevant starter-theme or child-theme....
 !wp-content/themes/storefrontiersman/
-# ..but ignore these specific files from my theme
+# ....but ignore these specific files from my theme
 wp-content/themes/storefrontiersman/style.css
 wp-content/themes/storefrontiersman/assets/sass/maps
