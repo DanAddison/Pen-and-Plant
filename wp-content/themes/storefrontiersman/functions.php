@@ -23,4 +23,16 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
-
+ 
+// remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
+    add_filter ( 'woocommerce_catalog_orderby', 'storefrontiersman_catalog_orderby', 20);
+    function storefrontiersman_catalog_orderby( $orderby ){
+    unset ($orderby['rating']);
+    return $orderby;
+    }
+    
+    // remove search from header
+    add_action( 'init', 'da_remove_storefront_header_search' );
+    function da_remove_storefront_header_search() {
+    remove_action( 'storefront_header', 'storefront_product_search', 	40 );
+    }
