@@ -23,10 +23,17 @@ Images License: GNU General Public License v2 or later
  * Add your own custom css below this text.
  */
 /*--------------------------------------------------------------
- ## Variables
- --------------------------------------------------------------*/
-.site-content {
-	background-color: #979191;
+# Utilities
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+.site-header {
+	background-color: #b6c8d3;
 }
+
+/*--------------------------------------------------------------
+# Woocommerce plugin
+--------------------------------------------------------------*/
 
 /*# sourceMappingURL=../storefrontiersman/assets/sass/maps/style.css.map */
