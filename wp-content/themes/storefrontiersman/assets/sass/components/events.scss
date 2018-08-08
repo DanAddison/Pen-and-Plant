@@ -1,0 +1,6 @@
+// overrides for the Events Calendar plugin
+
+// hide the search/filter bar since there will be so few events listed:
+#tribe-events-bar {
+  display: none;
+}
