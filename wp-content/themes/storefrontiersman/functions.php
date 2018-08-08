@@ -25,14 +25,53 @@ function sf_child_theme_dequeue_style() {
 
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
-    add_filter ( 'woocommerce_catalog_orderby', 'storefrontiersman_catalog_orderby', 20);
-    function storefrontiersman_catalog_orderby( $orderby ){
-    unset ($orderby['rating']);
-    return $orderby;
-    }
+add_filter ( 'woocommerce_catalog_orderby', 'storefrontiersman_catalog_orderby', 20);
+function storefrontiersman_catalog_orderby( $orderby ){
+unset ($orderby['rating']);
+return $orderby;
+}
     
-    // remove search from header
-    add_action( 'init', 'da_remove_storefront_header_search' );
-    function da_remove_storefront_header_search() {
-    remove_action( 'storefront_header', 'storefront_product_search', 	40 );
-    }
+// remove search from header:
+add_action( 'init', 'da_remove_storefront_header_search' );
+
+function da_remove_storefront_header_search() {
+remove_action( 'storefront_header', 'storefront_product_search', 	40 );
+}
+
+// Adds a top bar to Storefront, before the header:
+/*
+function storefront_add_topbar() {
+    ?>
+    <div id="topbar">
+        <div class="col-full">
+            <p>Your text here</p>
+        </div>
+    </div>
+    <?php
+}
+add_action( 'storefront_before_header', 'storefront_add_topbar' );
+*/
+
+// remove breadcrumbs:
+add_action('init', 'da_remove_wc_breadcrumbs');
+
+function da_remove_wc_breadcrumbs(){
+    remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
+};
+
+// remove footer credits:
+add_action( 'init', 'custom_remove_footer_credit', 10 );
+
+function custom_remove_footer_credit () {
+    remove_action( 'storefront_footer', 'storefront_credit', 20 );
+    add_action( 'storefront_footer', 'custom_storefront_credit', 20 );
+} 
+
+function custom_storefront_credit() {
+	?>
+	<div class="site-info">
+        <p>&copy; <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?></p>
+        <p>Website by <a href="https://www.danaddison.co.uk/">Dan Addison</a></p>
+	</div><!-- .site-info -->
+	<?php
+}

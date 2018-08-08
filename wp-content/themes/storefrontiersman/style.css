@@ -29,17 +29,65 @@ Images License: GNU General Public License v2 or later
 # Global
 --------------------------------------------------------------*/
 .site-header {
-	background-color: #b6c8d3;
+	position: relative;
+	background-size: cover;
+	margin-bottom: 100px;
+	height: 150px;
+}
+
+@media screen and (min-width: 500px) {
+	.site-header {
+		height: 200px;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.site-header {
+		height: 250px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.site-header {
+		height: 300px;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.site-header {
+		height: 350px;
+	}
+}
+
+.site-header .site-branding {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.storefront-primary-navigation {
+	position: absolute;
+	bottom: -76px;
+	width: 100%;
+	background-color: white;
 }
 
 /*--------------------------------------------------------------
 # Woocommerce plugin
 --------------------------------------------------------------*/
+.col-full {
+	max-width: 1200px;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 #tribe-events-bar {
 	display: none;
+}
+
+#mc_embed_signup input {
+	width: 100%;
 }
 
 /*# sourceMappingURL=../storefrontiersman/assets/sass/maps/style.css.map */

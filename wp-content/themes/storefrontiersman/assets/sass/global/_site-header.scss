@@ -1,3 +1,38 @@
 .site-header {
-  background-color: $color_header;
+  // background-color: $color__header; //if no header image set in customizer
+  position: relative;
+  background-size: cover;
+  margin-bottom: 100px;
+  height: 150px;
+
+  @media screen and (min-width: $mq__s) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: $mq__m) {
+    height: 250px;
+  }
+
+  @media screen and (min-width: $mq__l) {
+    height: 300px;
+  }
+
+  @media screen and (min-width: $mq__xl) {
+    height: 350px;
+  }
+  
+  .site-branding {
+    // the following 3 rules hide the site title and description from view but not from screen readers:
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+
+.storefront-primary-navigation {
+  position: absolute;
+  bottom: -76px;
+  width: 100%;
+  background-color: white;
 }
