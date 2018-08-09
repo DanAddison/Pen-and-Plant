@@ -5,19 +5,19 @@
   margin-bottom: 100px;
   height: 150px;
 
-  @media screen and (min-width: $mq__s) {
+  @media screen and (min-width: $bp-s) {
     height: 200px;
   }
 
-  @media screen and (min-width: $mq__m) {
-    height: 250px;
+  @media screen and (min-width: $bp-m) {
+    height: 250px; 
   }
 
-  @media screen and (min-width: $mq__l) {
+  @media screen and (min-width: $bp-l) {
     height: 300px;
   }
 
-  @media screen and (min-width: $mq__xl) {
+  @media screen and (min-width: $bp-xl) {
     height: 350px;
   }
   
@@ -29,10 +29,29 @@
   }
 }
 
-
 .storefront-primary-navigation {
   position: absolute;
   bottom: -76px;
   width: 100%;
   background-color: white;
+}
+
+// remove price total from cart contents and align count next to icon:
+.site-header-cart .cart-contents {
+  display: flex;
+  justify-content: flex-end;
+
+  .amount {
+    display:none;
+  }
+
+  .count {
+    padding-right: 5px;
+    line-height: 1.2;
+    color: $action-color;
+  }
+
+  &:after {
+    color: $copy-color;
+  }
 }

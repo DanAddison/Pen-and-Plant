@@ -25,9 +25,36 @@ Images License: GNU General Public License v2 or later
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
+/*********************************************************
+## colours
+*********************************************************/
+/*********************************************************
+## breakpoints
+*********************************************************/
+/*********************************************************
+## font families
+*********************************************************/
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
+body, button, input, textarea {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+}
+
+a {
+	color: #9AA997;
+}
+
+a:hover, a:focus {
+	color: #C68E7E;
+}
+
 .site-header {
 	position: relative;
 	background-size: cover;
@@ -72,6 +99,31 @@ Images License: GNU General Public License v2 or later
 	background-color: white;
 }
 
+.site-header-cart .cart-contents {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: end;
+	    justify-content: flex-end;
+}
+
+.site-header-cart .cart-contents .amount {
+	display: none;
+}
+
+.site-header-cart .cart-contents .count {
+	padding-right: 5px;
+	line-height: 1.2;
+	color: #e0866d;
+}
+
+.site-header-cart .cart-contents:after {
+	color: #616161;
+}
+
+.fa-user {
+	color: #616161;
+}
+
 /*--------------------------------------------------------------
 # Woocommerce plugin
 --------------------------------------------------------------*/
@@ -86,7 +138,9 @@ Images License: GNU General Public License v2 or later
 	display: none;
 }
 
-#mc_embed_signup input {
+input[type=email] {
+	font-style: italic;
+	font-weight: "Montserrat", sans-serif;
 	width: 100%;
 }
 
