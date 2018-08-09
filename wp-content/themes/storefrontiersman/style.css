@@ -70,7 +70,7 @@ a:hover, a:focus {
 
 @media screen and (min-width: 700px) {
 	.site-header {
-		height: 250px;
+		height: 300px;
 	}
 }
 
@@ -124,6 +124,18 @@ a:hover, a:focus {
 	color: #616161;
 }
 
+@media screen and (max-width: 500px) {
+	.alignleft,
+	.alignright {
+		float: none;
+		width: 100%;
+	}
+}
+
+.entry-title {
+	font-size: 2em;
+}
+
 /*--------------------------------------------------------------
 # Woocommerce plugin
 --------------------------------------------------------------*/
@@ -138,10 +150,19 @@ a:hover, a:focus {
 	display: none;
 }
 
+/*********************************************************
+## MailChimp signup
+*********************************************************/
 input[type=email] {
 	font-style: italic;
-	font-weight: "Montserrat", sans-serif;
 	width: 100%;
+}
+
+/*********************************************************
+## product search
+*********************************************************/
+.search-field {
+	font-style: italic;
 }
 
 /*# sourceMappingURL=../storefrontiersman/assets/sass/maps/style.css.map */

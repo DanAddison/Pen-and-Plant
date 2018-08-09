@@ -36,6 +36,7 @@ Images License: GNU General Public License v2 or later
 @import "global/typography";
 @import "global/site-header";
 @import "global/menus";
+@import "global/posts-and-pages";
 
 /*--------------------------------------------------------------
 # Woocommerce plugin
@@ -46,4 +47,4 @@ Images License: GNU General Public License v2 or later
 # Components
 --------------------------------------------------------------*/
 @import "components/events";
-@import "components/mailchimp";
+@import "components/widgets";
