@@ -23,11 +23,18 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
+//  my google fonts:
+add_action( 'wp_enqueue_scripts', 'my_google_fonts' );
+
+function my_google_fonts() {
+	wp_enqueue_style( 'my-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet"', false ); 
+}
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
 add_filter ( 'woocommerce_catalog_orderby', 'storefrontiersman_catalog_orderby', 20);
 function storefrontiersman_catalog_orderby( $orderby ){
 unset ($orderby['rating']);
+unset ($orderby['popularity']);
 return $orderby;
 }
     
@@ -40,6 +47,8 @@ remove_action( 'storefront_header', 'storefront_product_search', 	40 );
 
 // Adds a top bar to Storefront, before the header:
 /*
+add_action( 'storefront_before_header', 'storefront_add_topbar' );
+
 function storefront_add_topbar() {
     ?>
     <div id="topbar">
@@ -49,7 +58,6 @@ function storefront_add_topbar() {
     </div>
     <?php
 }
-add_action( 'storefront_before_header', 'storefront_add_topbar' );
 */
 
 // remove breadcrumbs:

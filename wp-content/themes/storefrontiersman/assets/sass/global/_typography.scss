@@ -1,0 +1,18 @@
+body, button, input, textarea {
+  font-family: $body-font;
+  font-weight: 300;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font;
+  font-weight: 400;
+}
+
+a {
+  color: $brand-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}

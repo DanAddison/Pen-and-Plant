@@ -1,3 +1,41 @@
+/*********************************************************
+## colours
+*********************************************************/
+
+$base-color: #CDCFCE;
+$module-color: #747775;
+
+$brand-color: #9AA997;
+$accent-color: #C68E7E;
+
+$action-color: #e0866d;
+
+$copy-color: #616161;
+$copy-color-darker: #4b4b4b;
+$copy-color-lighter: #a3a3a3;
+$copy-color-white: #fff;
+
+/*********************************************************
+## breakpoints
+*********************************************************/
+
+$bp-s: 500px;
+$bp-m: 700px;
+$bp-l: 900px;
+$bp-xl: 1100px;
+
+$bp-menu: $bp-xl;
+
+/*********************************************************
+## font families
+*********************************************************/
+$body-font: 'Montserrat', sans-serif;;
+$headings-font: 'Montserrat', sans-serif;
+
+
+
+
+
 $color__brand: #CDCFCE;
 $color__primary: #9AA997;
 $color__secondary: #C68E7E;
@@ -10,3 +48,4 @@ $mq__s: 500px;
 $mq__m: 700px;
 $mq__l: 900px;
 $mq__xl: 1100px;
+
