@@ -3,6 +3,13 @@
   color: $copy-color;
 }
 
+.menu-item-has-children {
+
+  &:hover {
+    background-color: #F2F2F2;
+  }
+}
+
 // adding home icon to handheld footer bar:
 .storefront-handheld-footer-bar ul li.home > a:before {
 	content: "\f015";

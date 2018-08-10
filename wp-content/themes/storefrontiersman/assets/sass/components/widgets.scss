@@ -1,10 +1,24 @@
+.widget-area {
+  margin-top: 20px;
+}
+
+.widget {
+  margin-bottom: 5em;
+}
+
+.gamma.widget-title {
+  color: $copy-color-darker;
+}
+
 /*********************************************************
 ## MailChimp signup
 *********************************************************/
-input[type=email] {
-  font-style: italic;
-  width: 100%;
+
+input#mce-EMAIL{
+font-style: italic;
+width: 100%;
 }
+
 
 /*********************************************************
 ## product search
