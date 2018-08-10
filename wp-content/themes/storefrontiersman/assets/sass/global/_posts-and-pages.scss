@@ -8,6 +8,28 @@
   }
 }
 
-.entry-title {
-  font-size: 2em;
+.post.type-post{
+
+  .entry-title {
+    font-size: 1.75em;
+
+    a {
+      font-weight: 400;
+    }
+  }
+
+  .entry-content {
+    width: 100%;
+  }
+
+  .wp-post-image {
+    float: left;
+    margin-right: 2em;
+    width: 40%;
+    
+    @media screen and (max-width: $bp-s) {
+      float: none;
+      width: 100%;
+    }
+  }
 }

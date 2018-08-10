@@ -1,3 +1,9 @@
+// main menu my account icon
 .fa-user {
   color: $copy-color;
+}
+
+// adding home icon to handheld footer bar:
+.storefront-handheld-footer-bar ul li.home > a:before {
+	content: "\f015";
 }

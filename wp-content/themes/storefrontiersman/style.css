@@ -124,6 +124,10 @@ a:hover, a:focus {
 	color: #616161;
 }
 
+.storefront-handheld-footer-bar ul li.home > a:before {
+	content: "\f015";
+}
+
 @media screen and (max-width: 500px) {
 	.alignleft,
 	.alignright {
@@ -132,8 +136,29 @@ a:hover, a:focus {
 	}
 }
 
-.entry-title {
-	font-size: 2em;
+.post.type-post .entry-title {
+	font-size: 1.75em;
+}
+
+.post.type-post .entry-title a {
+	font-weight: 400;
+}
+
+.post.type-post .entry-content {
+	width: 100%;
+}
+
+.post.type-post .wp-post-image {
+	float: left;
+	margin-right: 2em;
+	width: 40%;
+}
+
+@media screen and (max-width: 500px) {
+	.post.type-post .wp-post-image {
+		float: none;
+		width: 100%;
+	}
 }
 
 /*--------------------------------------------------------------
