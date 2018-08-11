@@ -26,7 +26,7 @@ function sf_child_theme_dequeue_style() {
 //  my google fonts:
 add_action( 'wp_enqueue_scripts', 'da_google_fonts' );
 
-function my_google_fonts() {
+function da_google_fonts() {
 	wp_enqueue_style( 'da-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet"', false ); 
 }
 
@@ -49,11 +49,12 @@ return $orderby;
 add_action( 'init', 'da_remove_storefront_actions' );
 
 function da_remove_storefront_actions() {
-// remove secondary menu from header:
-remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 
 // remove search from header:
-remove_action( 'storefront_header', 'storefront_product_search', 	40 );
+remove_action( 'storefront_header', 'storefront_product_search',	40 );
+
+// remove secondary menu that usually lives in the header:
+remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 
 // remove post meta (author card, category, leave a comment link) from posts:
 remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );
@@ -75,6 +76,23 @@ function da_add_to_cart_text( $text, $product ) {
 }
 */
 
+// remove the sidebars on the product page, product categories, and the shop page:
+add_action( 'wp', 'da_remove_sidebar_shop_page' );
+function da_remove_sidebar_shop_page() {
+
+if ( is_shop() || is_tax( 'product_cat' ) || get_post_type() == 'product' ) {
+
+	remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+	add_filter( 'body_class', 'da_remove_sidebar_class_body', 10 );
+	}
+}
+
+function da_remove_sidebar_class_body( $wp_classes ) {
+
+$wp_classes[] = 'page-template-template-fullwidth-php';
+return $wp_classes;
+}
+
 // add home icon to handheld footer bar:
 add_filter( 'storefront_handheld_footer_bar_links', 'da_add_home_link' );
 function da_add_home_link( $links ) {
@@ -94,39 +112,29 @@ function da_home_link() {
 	echo '<a href="' . esc_url( home_url( '/' ) ) . '">' . __( 'Home' ) . '</a>';
 }
 
-
-// remove footer credits:
-add_action( 'init', 'da_remove_footer_credit', 10 );
-
-function da_remove_footer_credit () {
-    remove_action( 'storefront_footer', 'storefront_credit', 20 );
-    add_action( 'storefront_footer', 'da_storefront_credit', 20 );
-} 
-
-function da_storefront_credit() {
-	?>
-	<div class="site-info">
-        <p>&copy; <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?></p>
-        <p class="credit">Website by <a href="https://www.danaddison.co.uk/">Dan Addison</a></p>
-	</div><!-- .site-info -->
-	<?php
-}
-
-// add secondary menu to footer:
-add_action( 'storefront_footer', 'storefront_secondary_navigation', 10 );
-
-// add social menu to footer
-// first we register it by filtering the storefront_register_nav_menus and adding our new menu to that array:
+// register social menu by filtering the storefront_register_nav_menus and adding our new menu to that array:
 add_filter( 'storefront_register_nav_menus', 'da_storefront_register_social_menu');
 function da_storefront_register_social_menu($menus){
 	$menus['social'] =  __( 'Social Menu', 'storefront' );
 	return $menus;
 }
-// now display the social menu in the footer:
-add_action( 'storefront_footer', 'da_storefront_social_navigation', 20 );
-function da_storefront_social_navigation() {
-		if ( has_nav_menu( 'social' ) ) {
-			?>
+
+// remove footer credits and add my own within a new footer that also includes social menu:
+add_action( 'init', 'da_remove_footer_credit', 10 );
+
+function da_remove_footer_credit () {
+    remove_action( 'storefront_footer', 'storefront_credit', 20 );
+    add_action( 'storefront_footer', 'da_storefront_footer', 20 );
+} 
+
+function da_storefront_footer() {
+	?>
+	<div class="sub-footer">
+
+		<div class="site-legal">
+			<p>&copy; <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?></p>
+		</div><!-- .site-legal -->
+
 			<nav class="social-navigation" role="navigation" aria-label="<?php esc_html_e( 'Social Navigation', 'storefront' ); ?>">
 				<?php
 					wp_nav_menu(
@@ -136,7 +144,12 @@ function da_storefront_social_navigation() {
 						)
 					);
 				?>
-			</nav><!-- #site-navigation -->
-			<?php
-	}
+			</nav><!-- social-navigation -->
+
+		<div class="site-credit">
+			<p class="credit">Website by <a href="https://www.danaddison.co.uk/">Dan Addison</a></p>
+		</div><!-- .site-credit -->
+
+	</div><!-- sub-footer -->
+	<?php
 }
