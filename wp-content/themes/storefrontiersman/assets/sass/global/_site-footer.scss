@@ -1,27 +1,16 @@
 // overall layout etc, specific styling for the menu component sections are found in menus.scss
 .site-footer {
-  .col-full {
-    // display: flex;
-    // justify-content: space-between;
-  }
+  padding-bottom: 1em;
 }
 
-.secondary-navigation {
-  width: 50%;
-  float: left;
-  
-  .menu {
-    float: none;
-    font-size: 1em;
-
-    li {
-      display: block;
-    }
-  }
+.sub-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0 0;
 }
 
 .social-navigation {
-  text-align: right;
+  text-align: center;
 
   ul {
     list-style: none;
@@ -33,25 +22,10 @@
   }
 
   a {
-    padding: 0 0 0 1em;
-
+    padding: .5em;
   }
 
   .fab {
     font-size: 1.25em;
-  }
-}
-
-.site-info {
-  text-align: right;
-  padding: .5em 0;
-
-  p {
-    margin: 0;
-    padding-top: 1em;
-  }
-
-  .credit {
-    // padding-top: 1em;
   }
 }

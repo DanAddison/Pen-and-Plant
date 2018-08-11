@@ -1,0 +1,70 @@
+// remove unecessary gaps from empty p tags in mailchimp sign up form:
+.widget p {
+  margin: 0;
+}
+
+/*********************************************************
+## Footer Menu widget
+*********************************************************/
+#menu-footer-menu li::before {
+  opacity: 1;
+}
+
+// my account icon:
+.widget_nav_menu ul .menu-item-233::before {
+  content: "\f007";
+}
+// FAQs icon:
+.widget_nav_menu ul .menu-item-229::before {
+  content: "\f059";
+}
+
+// privacy policy icon:
+.widget_nav_menu ul .menu-item-231::before {
+  content: "\f023";
+}
+
+/*********************************************************
+## Product Categories widget
+*********************************************************/
+.widget_product_categories ul li::before {
+  opacity: 1;
+}
+
+/*********************************************************
+## Product Search widget
+*********************************************************/
+.woocommerce-product-search {
+  input {
+    font-weight: 300;
+    font-size: .9em;
+    background-color: #fff;
+  }
+}
+
+/*********************************************************
+## MailChimp signup widget
+*********************************************************/
+.mc_embed_signup {
+
+  p {
+    margin: 0;
+  }
+}
+
+input#mce-EMAIL {
+  width: 100%;
+  font-weight: 300;
+  font-size: .9em;
+  background-color: #fff;
+}
+input#mc-embedded-subscribe {
+  margin-top: 1em;
+  width: 100%;
+  font-weight: 300;
+  font-size: .9em;
+  color: #fff;
+  background-color: $copy-color-lighter;
+}
+
+
