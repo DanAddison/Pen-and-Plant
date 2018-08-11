@@ -1,39 +1,42 @@
 .site-header {
-  // background-color: $color__header; //if no header image set in customizer
-  position: relative;
-  background-size: cover;
+  background-color: #fff;
   margin-bottom: 100px;
-  height: 150px;
-
-  @media screen and (min-width: $bp-s) {
-    height: 200px;
-  }
-
-  @media screen and (min-width: $bp-m) {
-    height: 300px; 
-  }
-
-  @media screen and (min-width: $bp-l) {
-    height: 300px;
-  }
-
-  @media screen and (min-width: $bp-xl) {
-    height: 350px;
-  }
   
   .site-branding {
     // the following 3 rules hide the site title and description from view but not from screen readers:
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    // position: absolute;
+    // top: -9999px;
+    // left: -9999px;
+  }
+}
+
+.woocommerce-active .site-header .site-branding {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  
+  @media screen and (min-width: $bp-menu) {
+    width: 150px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
   }
 }
 
 .storefront-primary-navigation {
-  position: absolute;
-  bottom: -76px;
   width: 100%;
-  background-color: white;
+  background-color: #fff;
+}
+
+.site-search {
+  margin: 6em 0 0;
+
+  .site-search .widget_product_search form input[type=search] {
+    border: none;
+  }
 }
 
 // remove price total from cart contents and align count next to icon:
