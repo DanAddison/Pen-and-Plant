@@ -1,0 +1,52 @@
+.splash {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.splash__image {
+	background-size: cover;
+	background-position: center center;
+  display: block;
+  background-image: url('assets/images/testWork4.png');
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+}
+
+.splash__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  h1 {
+    display: block;
+    text-align: center;
+    color: white;
+    border-bottom: 7px solid #fff;
+    margin: 0;
+  }
+
+  p {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 1.6em;
+  }
+}
