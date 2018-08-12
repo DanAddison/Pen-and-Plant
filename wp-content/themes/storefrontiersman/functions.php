@@ -47,7 +47,6 @@ return $orderby;
     
 // remove stuff:
 add_action( 'init', 'da_remove_storefront_actions' );
-
 function da_remove_storefront_actions() {
 
 // remove search from header:
@@ -64,6 +63,24 @@ remove_action( 'storefront_single_post', 'storefront_post_meta', 20 );
 remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
 
+
+// remove the sidebars on the product page, product categories, and the shop page:
+add_action( 'wp', 'da_remove_sidebar_shop_page' );
+function da_remove_sidebar_shop_page() {
+	
+	if ( is_shop() || is_tax( 'product_cat' ) || get_post_type() == 'product' ) {
+		
+		remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+		add_filter( 'body_class', 'da_remove_sidebar_class_body', 10 );
+	}
+}
+
+function da_remove_sidebar_class_body( $wp_classes ) {
+	
+	$wp_classes[] = 'page-template-template-fullwidth-php';
+	return $wp_classes;
+}
+
 /*
 // change cart to basket:
 // note: this does not also update any 'view cart' buttons, and if you change cart page name and slug to basket then cart cannot be found at all...
@@ -75,23 +92,6 @@ function da_add_to_cart_text( $text, $product ) {
 	return $text;
 }
 */
-
-// remove the sidebars on the product page, product categories, and the shop page:
-add_action( 'wp', 'da_remove_sidebar_shop_page' );
-function da_remove_sidebar_shop_page() {
-
-if ( is_shop() || is_tax( 'product_cat' ) || get_post_type() == 'product' ) {
-
-	remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
-	add_filter( 'body_class', 'da_remove_sidebar_class_body', 10 );
-	}
-}
-
-function da_remove_sidebar_class_body( $wp_classes ) {
-
-$wp_classes[] = 'page-template-template-fullwidth-php';
-return $wp_classes;
-}
 
 // add home icon to handheld footer bar:
 add_filter( 'storefront_handheld_footer_bar_links', 'da_add_home_link' );
@@ -120,9 +120,9 @@ function da_storefront_register_social_menu($menus){
 }
 
 // remove footer credits and add my own within a new footer that also includes social menu:
-add_action( 'init', 'da_remove_footer_credit', 10 );
+add_action( 'init', 'da_custom_footer', 10 );
 
-function da_remove_footer_credit () {
+function da_custom_footer () {
     remove_action( 'storefront_footer', 'storefront_credit', 20 );
     add_action( 'storefront_footer', 'da_storefront_footer', 20 );
 } 
