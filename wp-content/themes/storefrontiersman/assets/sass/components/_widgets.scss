@@ -27,9 +27,16 @@
 /*********************************************************
 ## Product Categories widget
 *********************************************************/
-.widget_product_categories ul li::before {
-  opacity: 1;
+.widget_product_categories ul li {
+
+  &:before {
+    opacity: 1;
+  }
 }
+
+.widget.woocommerce li .count {
+    float: none;
+  }
 
 /*********************************************************
 ## Product Search widget

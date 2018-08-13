@@ -5,3 +5,8 @@
 .storefront-sorting .woocommerce-ordering select {
   font-family: $body-font;
 }
+
+.storefront-product-section.storefront-product-categories {
+  background-color: $brand-color;
+  padding: 50px 100px 20px;
+}
