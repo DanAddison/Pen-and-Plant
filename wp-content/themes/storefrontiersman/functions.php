@@ -82,10 +82,15 @@ function da_remove_sidebar_class_body( $wp_classes ) {
 	return $wp_classes;
 }
 
-// Add sections to shop page - take these from the Homepage hooks around line 43 of storefront-template-hooks.php:
-add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 10 );
-add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 10 );
-// add_action( 'woocommerce_before_shop_loop', 'storefront_recent_products' );
+// Add sections to shop page:
+add_action( 'woocommerce_before_main_content', 'da_shop_page_sections' );
+function da_shop_page_sections() {
+	
+	if ( is_shop() ) {	
+		add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 8 );
+		add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 8 );
+	}
+}
 
 // change wording of featured products section from 'we recommend':
 add_filter( 'storefront_featured_products_args', 'da_featured_products' );
