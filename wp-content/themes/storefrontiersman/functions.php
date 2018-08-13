@@ -42,6 +42,7 @@ add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);
 function da_catalog_orderby( $orderby ){
 unset ($orderby['rating']);
 unset ($orderby['popularity']);
+$orderby['date'] = __('Sort by date: newest to oldest', 'woocommerce');
 return $orderby;
 }
     
@@ -79,6 +80,30 @@ function da_remove_sidebar_class_body( $wp_classes ) {
 	
 	$wp_classes[] = 'page-template-template-fullwidth-php';
 	return $wp_classes;
+}
+
+// remove phone filed in checkout:
+add_filter( 'woocommerce_checkout_fields', 'da_checkout_fields', 20 );
+function da_checkout_fields( $fields ){
+	unset( $fields['billing']['billing_phone']);
+	return $fields;
+}
+
+// Add 'how did you hear about us' feedback to checkout:
+add_filter( 'woocommerce_checkout_fields', 'da_hear_about_us', 30 );
+function da_hear_about_us ( $fields ){
+	$fields['order']['hear_about_us'] = array(
+		'type' => 'select',
+		'label' => 'How did you hear about us?',
+		'options' => array(
+			'default' => '--select an option--',
+			'wom' => 'Word of mouth',
+			'google' => 'Google',
+			'social' => 'Social media',
+			'print' => 'Print'
+		)
+		);
+	return $fields;
 }
 
 /*
