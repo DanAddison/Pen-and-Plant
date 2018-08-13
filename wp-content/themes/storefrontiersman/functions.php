@@ -82,7 +82,20 @@ function da_remove_sidebar_class_body( $wp_classes ) {
 	return $wp_classes;
 }
 
-// remove phone filed in checkout:
+// Add sections to shop page - take these from the Homepage hooks around line 43 of storefront-template-hooks.php:
+add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 10 );
+add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 10 );
+// add_action( 'woocommerce_before_shop_loop', 'storefront_recent_products' );
+
+// change wording of featured products section from 'we recommend':
+add_filter( 'storefront_featured_products_args', 'da_featured_products' );
+function da_featured_products( $args ){
+	$args['title'] = __( 'So Hot Right Now', 'storefront' );
+	return $args;
+}
+
+
+// remove phone field in checkout:
 add_filter( 'woocommerce_checkout_fields', 'da_checkout_fields', 20 );
 function da_checkout_fields( $fields ){
 	unset( $fields['billing']['billing_phone']);
