@@ -14,21 +14,21 @@ get_header(); ?>
 		<!-- <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/testWork4.png" alt=""> -->
 	</div>
     
-	<div class="splash__text">
+	<div class="splash__content">
     
-    <div class="row">
-
-			<h1><?php bloginfo( 'name' ); ?></h1>
-
-			<p>Antiquarian Books, Maps & Prints</p>
-
-			<div class="splash__links">
-				
-			</div>
-
+    <div class="site-identity">
+			<h1>Pen & Plant</h1>
+			<p><?php bloginfo( 'description' ); ?></p>	
 		</div>
 
-	</div><!-- splash__text -->
+		<div class="links">
+			<a href="http://penandplant.localhost/bio/">Bio</a>
+			<a href="http://penandplant.localhost/portfolio/">Portfolio</a>
+			<a href="http://penandplant.localhost/shop/">Shop</a>
+		</div>
+
+
+	</div><!-- splash__content -->
 
 </div>
 
