@@ -65,11 +65,11 @@ remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
 
 
-// remove the sidebars on the product page, product categories, and the shop page:
+// remove the sidebars on all pages and archives, except those stated:
 add_action( 'wp', 'da_remove_sidebar_shop_page' );
 function da_remove_sidebar_shop_page() {
 	
-	if ( is_shop() || is_tax( 'product_cat' ) || get_post_type() == 'product' ) {
+	if ( ! is_page ( array( 'bio', 'contact' ) )) {
 		
 		remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
 		add_filter( 'body_class', 'da_remove_sidebar_class_body', 10 );
