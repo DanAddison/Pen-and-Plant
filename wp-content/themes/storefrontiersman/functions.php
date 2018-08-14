@@ -36,6 +36,28 @@ add_action( 'wp_enqueue_scripts', 'da_social_icons_enqueue_fab' );
 function da_social_icons_enqueue_fab() {
 	wp_enqueue_style( 'font-awesome-5-brands', '//use.fontawesome.com/releases/v5.0.13/css/brands.css' );
 }
+
+// add hero image to all pages:
+add_action ( 'storefront_before_content', 'storefront_page_header' );
+
+function storefront_page_header() {
+	if( get_field('hero_image') ) : ?>
+
+	<div class="hero">
+
+		<div class="hero__image" style="background-image: url(<?php the_field('hero_image'); ?>)">
+	
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?></h1>	
+			</header>
+				
+		</div>
+
+	</div>
+		
+	<?php endif;
+}
+ 
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
 add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);
@@ -55,6 +77,9 @@ remove_action( 'storefront_header', 'storefront_product_search',	40 );
 
 // remove secondary menu that usually lives in the header:
 remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
+
+// remove page header because I now call that into the hero section:
+remove_action( 'storefront_page', 'storefront_page_header', 10 );
 
 // remove post meta (author card, category, leave a comment link) from posts:
 remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );

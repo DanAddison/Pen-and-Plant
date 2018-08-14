@@ -1,13 +1,12 @@
 .site-header {
   background-color: #fff;
-  margin-bottom: 100px;
   
-  .site-branding {
-    // the following 3 rules hide the site title and description from view but not from screen readers:
-    // position: absolute;
-    // top: -9999px;
-    // left: -9999px;
-  }
+  // .site-branding {
+  //   // the following 3 rules hide the site title and description from view but not from screen readers:
+  //   position: absolute;
+  //   top: -9999px;
+  //   left: -9999px;
+  // }
 }
 
 .woocommerce-active .site-header .site-branding {
@@ -31,13 +30,13 @@
   background-color: #fff;
 }
 
-.site-search {
-  margin: 6em 0 0;
+// .site-search {
+//   margin: 6em 0 0;
 
-  .site-search .widget_product_search form input[type=search] {
-    border: none;
-  }
-}
+//   .site-search .widget_product_search form input[type=search] {
+//     border: none;
+//   }
+// }
 
 // remove price total from cart contents and align count next to icon:
 .site-header-cart .cart-contents {
