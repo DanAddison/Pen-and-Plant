@@ -22,9 +22,9 @@ get_header(); ?>
 		</div>
 
 		<div class="links">
-			<a href="http://penandplant.localhost/bio/">Bio</a>
-			<a href="http://penandplant.localhost/portfolio/">Portfolio</a>
-			<a href="http://penandplant.localhost/shop/">Shop</a>
+			<div><a href="http://penandplant.localhost/bio/">Bio</a></div>
+			<div><a href="http://penandplant.localhost/portfolio/">Portfolio</a></div>
+			<div><a href="http://penandplant.localhost/shop/">Shop</a></div>
 		</div>
 
 

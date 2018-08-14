@@ -84,32 +84,36 @@
   }
 
   .links {
-    width: 80%;
+    width: 90%;
+    max-width: $bp-m;
     display: flex;
-    
-    @media screen and (min-width: $bp-l) {
-      width: 70%;
+    flex-direction: column;
+
+    @media screen and (min-width: $bp-s) {
+      flex-direction: row;
     }
 
-    a {
+    div {
+      margin: 1.5em 0;
       flex-grow: 1;
       color: white;
       font-size: 1em;
       font-weight: 300;
       text-align: center;
-      text-decoration: underline;
-      text-underline-position: under;
-
-      &:hover {
-        opacity: .8;
-      }
-
-      @media screen and (min-width: $bp-s) {
+      
+      @media screen and (min-width: $bp-l) {
         font-size: 1.25em;
       }
+      
+      a {
+        color: white;
+        padding: .5em 2em;
+        border: 1px solid white;
+        transition: background-color 0.2s ease;
 
-      @media screen and (min-width: $bp-m) {
-        font-size: 1.75em;
+        &:hover {
+          background-color: $action-color;
+        }
       }
     }
   }
