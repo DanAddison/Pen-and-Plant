@@ -9,11 +9,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: $brand-color;
+  color: $link-color;
   font-weight: 300;
 
   &:hover,
   &:focus {
-    color: $accent-color;
+    color: $hover-color;
+  }
+}
+
+button,
+.button {
+  font-weight: 300;
+  color: white;
+  background-color: $button-color;
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover-color;
   }
 }

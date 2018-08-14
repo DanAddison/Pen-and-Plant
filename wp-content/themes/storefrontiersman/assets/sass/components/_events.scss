@@ -1,6 +1,40 @@
 // overrides for the Events Calendar plugin
 
-// hide the search/filter bar since there will be so few events listed:
-#tribe-events-bar {
-  display: none;
+#tribe-events {
+// style all links
+  a {
+    color: $copy-color;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $hover-color;
+    }
+  }
+
+  // style Google Map link differently
+  .tribe-events-gmap {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  // hide the search/filter bar since there will be so few events listed:
+  #tribe-events-bar {
+    display: none;
+  }
+  
+  .tribe-events-event-image img {
+    margin-bottom: 1em;
+    max-height: 500px;
+    width: auto;
+  }
+  
+  .tribe-event-url {
+    font-weight: 400;
+  }
 }

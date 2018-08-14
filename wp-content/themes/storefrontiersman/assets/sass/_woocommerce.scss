@@ -6,7 +6,20 @@
   font-family: $body-font;
 }
 
+// main shop page category row
 .storefront-product-section.storefront-product-categories {
   background-color: $brand-color;
   padding: 50px 100px 20px;
+  margin-bottom: 4em;
+}
+
+// header mini cart styling
+.site-header-cart .widget_shopping_cart a.button,
+.widget a.button.checkout {
+  background-color: $button-color;
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover-color;
+  }
 }

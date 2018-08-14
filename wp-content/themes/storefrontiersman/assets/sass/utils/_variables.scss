@@ -3,12 +3,16 @@
 *********************************************************/
 
 $base-color: #CDCFCE;
-$module-color: #747775;
+$module-color: #a0a5a2;
 
 $brand-color: #c9e0c5;
 $accent-color: #C68E7E;
+$action-color: #cc6c52;
 
-$action-color: #e0866d;
+$link-color: $accent-color;
+$hover-color: $accent-color;
+$button-color: $accent-color;
+$button-hover-color: $action-color;
 
 $copy-color: #616161;
 $copy-color-darker: #4b4b4b;

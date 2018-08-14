@@ -1,31 +1,64 @@
 // overall layout etc, specific styling for the menu component sections are found in menus.scss
 .site-footer {
+  color: $copy-color-darker;
+  background-color: $module-color;
   padding-bottom: 1em;
+
+  a {
+    transition: 0.3s ease;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-widgets {
+  border-bottom: 1px solid $copy-color;
 }
 
 .sub-footer {
   display: flex;
   justify-content: space-between;
   padding: 2em 0 0;
-}
 
-.social-navigation {
-  text-align: center;
+  .site-legal p {
+    color: $copy-color-darker;
+  }
+  
+  .social-navigation {
+    text-align: center;
+    
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    
+    li {
+      display: inline-block;
+    }
+    
+    a {
+      padding: .5em;
 
-  ul {
-    list-style: none;
-    margin: 0;
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+    
+    .fab {
+      font-size: 1.25em;
+    }
   }
 
-  li {
-    display: inline-block;
-  }
+  .credit a {
+    text-decoration: underline;
 
-  a {
-    padding: .5em;
-  }
-
-  .fab {
-    font-size: 1.25em;
+    &:hover,
+    &:focus {
+      color: white;
+    }
   }
 }
