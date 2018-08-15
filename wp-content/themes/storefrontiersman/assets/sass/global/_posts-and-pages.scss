@@ -29,12 +29,31 @@
 
   .wp-post-image {
     float: left;
+    margin-left: 0;
     margin-right: 2em;
-    width: 40%;
+    width: auto;
+    max-height: 200px;
     
-    @media screen and (max-width: $bp-s) {
+    @media screen and (max-width: $bp-m) {
       float: none;
-      width: 100%;
+      // width: 100%;
     }
+  }
+}
+
+.comments-area {
+  background-color: $module-color;
+  color: $copy-color-darkest;
+}
+
+.comment-form {
+
+  label {
+    font-weight: 300;
+  }
+
+  .submit{
+    font-weight: 300;
+    background-color: $button-color;
   }
 }
