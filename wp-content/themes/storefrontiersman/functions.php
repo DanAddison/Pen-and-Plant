@@ -124,6 +124,18 @@ function da_featured_products( $args ){
 	return $args;
 }
 
+// changing number of columns for product category rows:
+add_filter( 'storefront_product_categories_args', 'da_product_categories' );
+function da_product_categories( $args ){
+	$args = array(
+		'limit' => 5,
+		'columns' => 5,
+		'orderby' => 'name',
+		'title'	=> __( 'Shop by Category', 'storefront' ),
+	);
+	return $args;
+}
+
 
 // remove phone field in checkout:
 add_filter( 'woocommerce_checkout_fields', 'da_checkout_fields', 20 );

@@ -1,3 +1,9 @@
+.woocommerce-products-header {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3em;
+}
+
 .product_title {
   font-size: 1.75em;
 }
@@ -6,11 +12,20 @@
   font-family: $body-font;
 }
 
-// main shop page category row
-.storefront-product-section.storefront-product-categories {
-  background-color: $brand-color;
-  padding: 50px 100px 20px;
+.storefront-product-section .section-title {
+  font-weight: 300;
+}
+
+// main shop page featured images row
+.storefront-product-section.storefront-featured-products {
+  background-color: $base-color;
+  padding: 50px 60px 0;
   margin-bottom: 4em;
+}
+
+li.product img {
+  border: 1px solid #f0efef;
+  border-radius: 0;
 }
 
 // header mini cart styling
