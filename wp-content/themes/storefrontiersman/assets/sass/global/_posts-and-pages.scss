@@ -1,6 +1,6 @@
 // increase overall width:
 .col-full {
-  max-width: 1200px;
+  // max-width: 1200px;
 }
 
 .site-content {
@@ -11,7 +11,7 @@
 .alignleft,
 .alignright {
 
-  @media screen and (max-width: $bp-s) {
+  @media screen and (max-width: $bp-m) {
     float: none;
     width: 100%;
   }

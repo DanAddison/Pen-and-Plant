@@ -3,11 +3,11 @@
   color: $copy-color;
 }
 
-.main-navigation ul li a {
+.main-navigation ul.menu ul li a, .main-navigation ul.nav-menu ul li a {
+  font-weight: 300;
 
   &:hover,
   &:focus {
-    // color: $copy-color-darker;
     text-decoration: underline;
   }
 }
@@ -16,10 +16,26 @@
   color: $accent-color;
 }
 
+.main-navigation ul ~ a {
+  font-weight: 300;
+}
+
 .menu-item-has-children {
 
   &:hover {
     background-color: #F2F2F2;
+  }
+}
+
+button.menu-toggle {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 0;
+  margin-top: 3.1em;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
   }
 }
 
