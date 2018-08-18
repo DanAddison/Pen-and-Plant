@@ -1,66 +1,75 @@
 .site-header {
-  background-color: #fff;
-  
-  // .site-branding {
-  //   // the following 3 rules hide the site title and description from view but not from screen readers:
-  //   position: absolute;
-  //   top: -9999px;
-  //   left: -9999px;
-  // }
+  // background-color: #b6c8d3;
+  position: relative;
+  padding: 0;
+  background-size: cover;
+  background-position: center bottom;
+  margin-bottom: 150px;
+  height: 150px;
+}
+  @media screen and (min-width: 500px) {
+  .site-header {
+    height: 200px;
+  }
+}
+  @media screen and (min-width: 700px) {
+  .site-header {
+    height: 250px;
+  }
+}
+  @media screen and (min-width: 900px) {
+  .site-header {
+    height: 300px;
+  }
+}
+  @media screen and (min-width: 1100px) {
+  .site-header {
+    height: 350px;
+  }
 }
 
-.woocommerce-active .site-header .site-branding {
-  display: block;
-  width: 100px;
-  margin: 0 auto 1em;
-  
-  @media screen and (min-width: $bp-menu) {
-    width: 150px;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
+.site-branding {
+  // the following 3 rules hide the site title and description from view but not from screen readers:
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 .storefront-primary-navigation {
+  position: absolute;
+  bottom: -100px;
   width: 100%;
-  background-color: #fff;
+  background-color: white;
+  
+  @media screen and (min-width: $bp-menu) {
+    bottom: -76px;
+  }
 }
 
-/*********************************************************
-## mini cart stuff:
-*********************************************************/
+.site-search {
+  margin: 6em 0 0;
+
+  .site-search .widget_product_search form input[type=search] {
+    border: none;
+  }
+}
+
+// remove price total from cart contents and align count next to icon:
 .site-header-cart .cart-contents {
   display: flex;
   justify-content: flex-end;
 
   .amount {
-    display: none;
+    display:none;
   }
 
   .count {
     padding-right: 5px;
     line-height: 1.2;
     color: $action-color;
-    float: left;
   }
 
   &:after {
     color: $copy-color;
   }
-  
-  @media screen and (min-width: $bp-menu) {
-    padding: 1.618em 0;
-    display: block;
-    position: relative;
-    background-color: transparent;
-    height: auto;
-    width: auto;
-    text-indent: 0;
-    float: right;
-  }
 }
-

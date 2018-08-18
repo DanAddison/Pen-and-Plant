@@ -38,6 +38,7 @@ function da_social_icons_enqueue_fab() {
 }
 
 // add hero image to all pages:
+/*
 add_action ( 'storefront_before_content', 'storefront_page_header' );
 
 function storefront_page_header() {
@@ -57,6 +58,7 @@ function storefront_page_header() {
 		
 	<?php endif;
 }
+*/
  
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
@@ -78,8 +80,8 @@ remove_action( 'storefront_header', 'storefront_product_search',	40 );
 // remove secondary menu that usually lives in the header:
 remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 
-// remove page header because I now call that into the hero section:
-remove_action( 'storefront_page', 'storefront_page_header', 10 );
+// remove page header when using hero if I want page title inside hero section:
+// remove_action( 'storefront_page', 'storefront_page_header', 10 );
 
 // remove post meta (author card, category, leave a comment link) from posts:
 remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );
