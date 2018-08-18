@@ -21,7 +21,12 @@
 .sub-footer {
   display: flex;
   justify-content: space-between;
-  padding: 2em 0 0;
+  padding: 2em 0 70px;
+// padding on bottom is to clear handheld footer bar
+
+  @media screen and (min-width: $bp-menu) {
+    padding-bottom: 0;
+  }
 
   .site-legal p {
     color: $copy-color-darker;
