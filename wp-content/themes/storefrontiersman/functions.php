@@ -59,7 +59,29 @@ function storefront_page_header() {
 	<?php endif;
 }
 */
- 
+
+// initialise extra new widget areas:
+function da_widgets_init() {
+	
+	register_sidebar( array(
+		'id'            => 'above_footer_widget',
+		'name'          => __( 'Above Footer', 'text_domain' ),
+		'description'   => __( 'Widgets added here will display above all other footer widgets', 'text_domain' ),
+		'before_widget' => '<div class="instagram-widget">',
+		'after_widget'  => '</div>',
+		) );	
+}
+add_action( 'widgets_init', 'da_widgets_init' );
+	
+// create instagram feed widget:	
+function da_instagram_widget() {
+	if ( is_active_sidebar( 'above_footer_widget' ) ) : ?>
+
+		<?php dynamic_sidebar( 'above_footer_widget' ); ?>	
+	
+<?php endif;
+}
+add_action( 'storefront_page_after', 'da_instagram_widget', 10 );
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
 add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);
@@ -206,7 +228,7 @@ add_action( 'init', 'da_custom_footer', 10 );
 
 function da_custom_footer () {
     remove_action( 'storefront_footer', 'storefront_credit', 20 );
-    add_action( 'storefront_footer', 'da_storefront_footer', 20 );
+		add_action( 'storefront_footer', 'da_storefront_footer', 20 );
 } 
 
 function da_storefront_footer() {

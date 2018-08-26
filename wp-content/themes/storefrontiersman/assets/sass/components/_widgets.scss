@@ -4,6 +4,42 @@
 }
 
 /*********************************************************
+## Instagram widget
+*********************************************************/
+.instagram-widget {
+  
+  .widgettitle {
+    // text-transform: uppercase;
+    // font-size: 1em;
+    display: none;
+  }
+  
+  .instagram-pics {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+
+    li {
+      padding: .5em;
+    }
+
+    img {
+      border-radius: 0;
+    }
+  }
+              
+  @media screen and (min-width: $bp-menu) {
+    margin-bottom: 0;
+
+    // .instagram-pics {
+    //   flex-wrap: nowrap;
+    // }
+  }
+}
+
+/*********************************************************
 ## Footer Menu widget
 *********************************************************/
 #menu-footer-menu li::before {
