@@ -1,8 +1,6 @@
 <?php
 /**
- * Dan's template for displaying the homepage.
- *
- * Template name: Homepage
+ * for displaying the splashpage
  *
  * @package storefront
  */
