@@ -75,11 +75,11 @@ add_action( 'widgets_init', 'da_widgets_init' );
 	
 // create instagram feed widget:	
 function da_instagram_widget() {
-	if ( is_active_sidebar( 'above_footer_widget' ) ) : ?>
-
-		<?php dynamic_sidebar( 'above_footer_widget' ); ?>	
-	
-<?php endif;
+	if( ! is_active_sidebar( 'above_footer_widget' ) )
+		return;
+	if ( is_page ( array( 'bio', 'contact', 'publications' ) ) || tribe_is_event_query() ) {
+		dynamic_sidebar( 'above_footer_widget' );
+	}
 }
 add_action( 'storefront_page_after', 'da_instagram_widget', 10 );
  
