@@ -1,7 +1,10 @@
 .woocommerce-products-header {
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 3em;
+
+  .term-description {
+    text-transform: none;
+  }
 }
 
 .product_title {
@@ -28,13 +31,9 @@ li.product img {
   border-radius: 0;
 }
 
-// header mini cart styling
-.site-header-cart .widget_shopping_cart a.button,
-.widget a.button.checkout {
-  background-color: $button-color;
-
-  &:hover,
-  &:focus {
-    background-color: $button-hover-color;
-  }
+// restrict maximum width of archive products before they break into columns:
+ul.products li.product {
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }

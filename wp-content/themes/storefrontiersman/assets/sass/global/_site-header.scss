@@ -1,10 +1,8 @@
 .site-header {
-  // background-color: #b6c8d3;
   position: relative;
   padding: 0;
   background-size: cover;
   background-position: center bottom;
-  margin-bottom: 150px;
   height: 150px;
 }
   @media screen and (min-width: 500px) {
@@ -35,22 +33,28 @@
   left: -9999px;
 }
 
-.storefront-primary-navigation {
-  position: absolute;
-  bottom: -100px;
-  width: 100%;
-  background-color: white;
-  
-  @media screen and (min-width: $bp-menu) {
-    bottom: -76px;
+// restrict width of header cart below 1000px so that nav items still work:
+.site-header-cart {
+  top: -75px;
+  margin-left: auto;
+  width: 100px;
+
+  &:hover,
+  &:focus {
+    background-color: #F2F2F2
+  } 
+
+  @media screen and (min-width: 1000px) {
+    width: 300px;
   }
 }
 
-.site-search {
-  margin: 6em 0 0;
+.site-header-cart:hover .widget_shopping_cart {
+  left: -200px;
+  width: auto;
 
-  .site-search .widget_product_search form input[type=search] {
-    border: none;
+  @media screen and (min-width: 1000px) {
+    left: 0;
   }
 }
 
@@ -64,12 +68,40 @@
   }
 
   .count {
-    padding-right: 5px;
-    line-height: 1.2;
-    color: $action-color;
+    display: none;
+
+    @media screen and (min-width: $bp_menu) {
+      display: block; 
+      padding-right: 5px;
+      line-height: 1.2;
+      color: $action-color;
+    }
   }
 
   &:after {
     color: $copy-color;
+  }
+}
+
+// header mini cart dropdown styling:
+.site-header-cart .widget_shopping_cart a.button,
+.widget a.button.checkout {
+  background-color: $button-color;
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover-color;
+  }
+}
+
+.widget_shopping_cart_content {
+  padding: 0 1em;
+}
+
+.widget_shopping_cart .product_list_widget li {
+  padding-left: 0;
+
+  .quantity {
+    padding-left: 1.5em;
   }
 }

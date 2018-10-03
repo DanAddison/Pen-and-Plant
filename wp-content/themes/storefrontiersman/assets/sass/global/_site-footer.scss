@@ -2,7 +2,8 @@
 .site-footer {
   color: $copy-color-darker;
   background-color: $module-color;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
+  padding-top: 3em;
 
   a {
     transition: 0.3s ease;
@@ -11,6 +12,11 @@
     &:focus {
       text-decoration: underline;
     }
+  }
+
+  @media screen and (min-width: $bp-menu) {
+    padding-bottom: 1em;
+    padding-top: 0;
   }
 }
 
@@ -21,11 +27,11 @@
 .sub-footer {
   display: flex;
   justify-content: space-between;
-  padding: 2em 0 70px;
-// padding on bottom is to clear handheld footer bar
+  padding: 2em 0 80px;
+// padding on bottom is to clear handheld footer bar (and also store notice, in case it is enabled)
 
   @media screen and (min-width: $bp-menu) {
-    padding-bottom: 0;
+    padding-bottom: 40px;
   }
 
   .site-legal p {

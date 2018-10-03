@@ -27,15 +27,39 @@
   }
 }
 
+.main-navigation .toggled {
+  transition: all 2s;
+}
+
 button.menu-toggle {
+  position: relative;
   background-color: #fff;
-  border: 1px solid black;
-  border-radius: 0;
-  margin-top: 3.1em;
+  margin-top: 1em;
+  // border: 1px solid $copy-color;
+  // border-radius: 0;
+  border: none;
+
+  span::before {
+    // display: none;
+    // width: 20px;
+  }
+
+  // &:before {
+  //   width: 20px;
+  //   left: .5em;
+  //   margin-top: -3px;
+  // }
+
+  // &:after {
+  //   width: 20px;
+  //   left: .5em;
+  //   margin-top: 3px;
+  // }
 
   &:hover,
   &:focus {
     background-color: #fff;
+    outline: none;
   }
 }
 
