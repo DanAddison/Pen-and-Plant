@@ -95,7 +95,7 @@ function da_instagram_widget() {
 		dynamic_sidebar( 'above_footer_widget' );
 	}
 }
-add_action( 'storefront_page_after', 'da_instagram_widget', 10 );
+add_action( 'storefront_before_footer', 'da_instagram_widget', 5 );
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
 // add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);

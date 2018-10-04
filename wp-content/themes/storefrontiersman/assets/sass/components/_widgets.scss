@@ -9,7 +9,7 @@
 .instagram-widget {
   padding: 2em 1em;
   // margin: 1em;
-  background-color: $module-color-light;
+  // background-color: $module-color-light;
   
   .widgettitle {
     margin-bottom: 1em;
@@ -21,12 +21,13 @@
   }
   
   .instagram-pics {
+    max-width: 66.5em;
     list-style: none;
     display: flex;
     flex: 1;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     
     li {
       // padding: .5em;
@@ -35,13 +36,14 @@
     img {
       border-radius: 0;
     }
-  }
-              
-  @media screen and (min-width: $bp-menu) {
-    margin-bottom: -2em;
 
-    .instagram-pics {
+    @media screen and (min-width: $bp-s) {
+      width: 450px;
+    }
+    
+    @media screen and (min-width: $bp-menu) {
       flex-wrap: nowrap;
+      width: 100%;
     }
   }
 }
