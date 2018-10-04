@@ -1,9 +1,19 @@
 .woocommerce-products-header {
   text-align: center;
   text-transform: uppercase;
+  padding-bottom: 2em !important;
 
-  .term-description {
+  .page-title {
+    font-size: 1.75em;
+
+    @media screen and (min-width: $bp-m) {
+      font-size: 2.6em;
+    }
+  }
+
+  .term-description p {
     text-transform: none;
+    margin: 0;
   }
 }
 
@@ -23,7 +33,7 @@
 .storefront-product-section.storefront-featured-products {
   background-color: $base-color;
   padding: 50px 60px 0;
-  margin-bottom: 4em;
+  margin-bottom: 5em;
 }
 
 li.product img {
@@ -36,4 +46,55 @@ ul.products li.product {
   max-width: 280px;
   margin-left: auto;
   margin-right: auto;
+}
+
+// product categories list:
+.menu--categories {
+  text-align: center;
+  margin-bottom: 1em;
+
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  ul {
+    // position: relative;
+    display: inline-block;
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      display: inline-block;
+
+      &:after {
+        content: "/";
+        color: rgb(158, 157, 157);
+        display: inline-block;
+        // position: absolute;
+        // top: 1px;
+        // right: -9px;
+      }
+    
+      &:last-child:after {
+        content: "";
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+
+      ul {
+        display: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .current-cat a {
+      text-decoration: underline;
+    }
+  }
 }

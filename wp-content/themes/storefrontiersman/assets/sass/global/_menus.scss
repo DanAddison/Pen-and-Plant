@@ -27,6 +27,10 @@
   }
 }
 
+.menu .current-menu-item {
+  text-decoration: underline;
+}
+
 .main-navigation .toggled {
   transition: all 2s;
 }

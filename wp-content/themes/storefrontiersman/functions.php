@@ -98,14 +98,15 @@ function da_instagram_widget() {
 add_action( 'storefront_page_after', 'da_instagram_widget', 10 );
  
 // remove 'sort by average rating' from the dropdown on a product page (reinstate if there are eventually lots of ratings):
-add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);
-function da_catalog_orderby( $orderby ){
-unset ($orderby['rating']);
-unset ($orderby['popularity']);
-$orderby['date'] = __('Sort by date: newest to oldest', 'woocommerce');
-return $orderby;
-}
-    
+// add_filter ( 'woocommerce_catalog_orderby', 'da_catalog_orderby', 20);
+// function da_catalog_orderby( $orderby ){
+// unset ($orderby['rating']);
+// unset ($orderby['popularity']);
+// $orderby['date'] = __('Sort by date: newest to oldest', 'woocommerce');
+// return $orderby;
+// }
+
+   
 // remove stuff:
 add_action( 'init', 'da_remove_storefront_actions' );
 function da_remove_storefront_actions() {
@@ -118,6 +119,12 @@ remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 
 // remove page header when using hero if I want page title inside hero section:
 // remove_action( 'storefront_page', 'storefront_page_header', 10 );
+
+// remove sorting dropdown and result count on shop pages entirely (looks ugly, probably not that useful?):
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
 
 // remove post meta (author card, category, leave a comment link) from posts:
 remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );
@@ -144,8 +151,7 @@ function da_remove_sidebar_class_body( $wp_classes ) {
 
 // Add sections to shop page:
 add_action( 'woocommerce_before_main_content', 'da_shop_page_sections' );
-function da_shop_page_sections() {
-	
+function da_shop_page_sections() {	
 	if ( is_shop() ) {	
 		add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 8 );
 		// add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 8 );
@@ -163,6 +169,24 @@ function da_featured_products( $args ){
 	);
 	return $args;
 }
+
+// add product categories horizontal list on shop archive pages
+function da_archive_categories_list() {
+	$args = array(
+		'separator' => ' &sol;&sol; ',
+		'style' => 'list',
+		'taxonomy' => 'product_cat',
+		'title_li' => '',
+	);
+
+	echo '<div class="menu--categories">
+	<p>Categories: </p>
+	<ul >';
+	wp_list_categories( $args );
+	echo '</ul></div>';
+}
+// add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 9 );
+add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 9 );
 
 // changing number of columns for product category rows, if a 'Shop by Category' section is to be included on main shop page:
 // add_filter( 'storefront_product_categories_args', 'da_product_categories' );
