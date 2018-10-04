@@ -162,7 +162,7 @@ function da_shop_page_sections() {
 add_filter( 'storefront_featured_products_args', 'da_featured_products' );
 function da_featured_products( $args ){
 	$args = array(
-		'limit' => 6,
+		'limit' => 3,
 		'columns' => 3,
 		'orderby' => 'name',
 		'title'	=> __( 'Featured Products', 'storefront' ),

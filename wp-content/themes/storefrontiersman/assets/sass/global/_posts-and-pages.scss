@@ -35,7 +35,9 @@
   }
 }
 
-.page .entry-header {
+// center align page title if there is no sidebar (fullwidth template chosen):
+.page-template-template-fullwidth-php .entry-header,
+.page-template-template-fullwidth .entry-header {
   text-align: center;
   font-size: .6em;  
 

@@ -21,22 +21,20 @@
   }
   
   .instagram-pics {
+    // match global max width
     max-width: 66.5em;
+    margin: 0 auto;
     list-style: none;
     display: flex;
     flex: 1;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
-    
-    li {
-      // padding: .5em;
-    }
 
     img {
       border-radius: 0;
     }
 
+    // stick with 3 images across (not 4 then 5 etc) until screen size can accommodate all in a row
     @media screen and (min-width: $bp-s) {
       width: 450px;
     }
