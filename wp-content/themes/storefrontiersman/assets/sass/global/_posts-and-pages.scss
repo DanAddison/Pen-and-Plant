@@ -3,6 +3,10 @@
 //   max-width: 1200px;
 // }
 
+img {
+  border-radius: 0;
+}
+
 // avoid floated images with content flowing around them from squishing down silly small on mobile screen:
 .alignleft,
 .alignright {

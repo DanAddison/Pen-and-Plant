@@ -44,10 +44,6 @@
     display: flex;
     flex: 1;
     justify-content: center;
-
-    img {
-      border-radius: 0;
-    }
       
     @media screen and (max-width: $bp-menu) {
       li:nth-child(n+7) {  
