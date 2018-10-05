@@ -7,7 +7,7 @@
 ## Instagram widget
 *********************************************************/
 .instagram-widget {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   
   .widgettitle {
     margin-bottom: 1em;
@@ -17,6 +17,22 @@
     // display: none;
   }
   
+  // link:
+  p {
+    max-width: 66.5em;
+    margin: 0 auto;
+    padding-left: .5em;
+
+    a {
+      color: $link-color;
+      
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .instagram-pics {
     // match global max width:
     max-width: 66.5em;
