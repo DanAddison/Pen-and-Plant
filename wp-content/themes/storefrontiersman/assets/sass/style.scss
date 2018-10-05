@@ -29,6 +29,7 @@ Images License: GNU General Public License v2 or later
 # Utilities
 --------------------------------------------------------------*/
 @import "utils/variables";
+@import "utils/mixins";
 
 /*--------------------------------------------------------------
 # Global
@@ -40,6 +41,12 @@ Images License: GNU General Public License v2 or later
 @import "global/posts-and-pages";
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/splashpage";
+@import "pages/publications";
+
+/*--------------------------------------------------------------
 # Woocommerce plugin
 --------------------------------------------------------------*/
 @import "woocommerce";
@@ -47,7 +54,6 @@ Images License: GNU General Public License v2 or later
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "components/splashpage";
 @import "components/hero";
 @import "components/events";
 @import "components/widgets";
