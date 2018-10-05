@@ -1,0 +1,32 @@
+.project-page {
+
+}
+
+.project-title {
+  font-size: 2em;
+  margin: 0;
+}
+
+.project-meta {
+  margin-bottom: 2em;
+  
+  p {
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+.project-featured-image {
+  margin-bottom: 2em;
+}
+
+.project-thumbnails-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+
+  img {
+    padding: 0;
+    margin: 0;
+  }
+}

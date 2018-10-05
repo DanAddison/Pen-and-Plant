@@ -45,6 +45,7 @@ Images License: GNU General Public License v2 or later
 --------------------------------------------------------------*/
 @import "pages/splashpage";
 @import "pages/publications";
+@import "pages/project-page";
 
 /*--------------------------------------------------------------
 # Woocommerce plugin
@@ -58,3 +59,8 @@ Images License: GNU General Public License v2 or later
 @import "components/events";
 @import "components/widgets";
 @import "components/contact";
+
+/*--------------------------------------------------------------
+# Vendors (3rd party js modules etc)
+--------------------------------------------------------------*/
+@import "vendors/jquery.fancybox.scss";

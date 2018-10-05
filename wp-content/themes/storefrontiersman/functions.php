@@ -25,17 +25,23 @@ function sf_child_theme_dequeue_style() {
 
 //  my google fonts:
 add_action( 'wp_enqueue_scripts', 'da_google_fonts' );
-
 function da_google_fonts() {
 	wp_enqueue_style( 'da-google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet"', false ); 
 }
 
 // add font awesome brands (some fa is already in the theme eg user, home, cart icons, but not brands):
 add_action( 'wp_enqueue_scripts', 'da_font_awesome_enqueue' );
-
 function da_font_awesome_enqueue() {
 	wp_enqueue_style( 'font-awesome-5-all', '//use.fontawesome.com/releases/v5.3.1/css/all.css' );
 }
+
+add_action( 'wp_enqueue_scripts', 'da_lightbox' );
+function da_lightbox() {
+	if ( is_page_template( 'template-project.php' ) ) {
+	wp_enqueue_script( 'da-lightbox', get_stylesheet_directory_uri() . '/assets/js/jquery.fancybox.js', array(jquery), null, true );
+	}
+}
+
 
 function da_move_nav_below_header_image() 
 {

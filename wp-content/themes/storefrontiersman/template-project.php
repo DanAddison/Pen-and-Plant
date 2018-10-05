@@ -20,10 +20,10 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<a href="<?php $parentLink = get_permalink($post->post_parent); echo $parentLink; ?>" title="Go back to the Portfolio page" class="back">&#8592; Back to Work</a>
+				<a href="<?php $parentLink = get_permalink($post->post_parent); echo $parentLink; ?>" title="Go back to the Portfolio page" class="back">&#8592; Back</a>
 
 				<header>
-					<?php the_title( '<h1 class="artwork-title">', '</h1>' ); ?>
+					<?php the_title( '<h1 class="project-title">', '</h1>' ); ?>
 				</header>
 
 
@@ -32,38 +32,38 @@ get_header(); ?>
 						
 						if( $fields ) : ?>
 
-						<div class="artwork-meta">
+						<div class="project-meta">
 
-							<p class="artwork-date"><?php the_field('artwork_date'); ?></p>
-							<p class="artwork-materials"><?php the_field('artwork_materials'); ?></p>
+							<p class="project-date"><?php the_field('project_date'); ?></p>
+							<p class="project-materials"><?php the_field('project_materials'); ?></p>
 							
-							<?php if(get_field('artwork_collaborators')) : ?>
-								<p><?php the_field('artwork_collaborators'); ?></p>
+							<?php if(get_field('project_collaborators')) : ?>
+								<p><?php the_field('project_collaborators'); ?></p>
 							<?php endif; ?>
 
-						</div><!-- .artwork-meta info -->
+						</div><!-- .project-meta info -->
 
-						<div class="artwork-images">
+						<div class="project-images">
 
 							<?php			
-							$imageArray = get_field('artwork_featured_image'); // Array returned by Advanced Custom Fields
+							$imageArray = get_field('project_featured_image'); // Array returned by Advanced Custom Fields
 							$imageAlt = esc_attr($imageArray['alt']); // Grab, from the array, the 'alt'
 							$imageMediumLargeURL = esc_url($imageArray['sizes']['medium_large']); //grab from the array, the 'sizes', and from it, the 'medium_large'
 							?>
 							
-							<div class="artwork-featured-image">
+							<div class="project-featured-image">
 								<img src="<?php echo $imageMediumLargeURL;?>" alt="<?php echo $imageAlt; ?>">
-							</div><!-- .artwork-image - main feature image -->
+							</div><!-- .project-image - main feature image -->
 
-						</div><!-- .artwork-images container -->
+						</div><!-- .project-images container -->
 
-						<div class="artwork-description">
-							<p><?php the_field('artwork_description'); ?></p>
+						<div class="project-description">
+							<p><?php the_field('project_description'); ?></p>
 						</div>
 
-						<div class="artwork-thumbnails-gallery">
+						<div class="project-thumbnails-gallery">
 
-							<?php	while ( have_rows('artwork_thumbnail_gallery') ) : the_row(); 
+							<?php	while ( have_rows('project_thumbnail_gallery') ) : the_row(); 
 								$image = get_sub_field('thumbnail_images');
 								$thumbnail = 'thumbnail';
 								$large = 'large';
@@ -82,7 +82,7 @@ get_header(); ?>
 
 							<?php endwhile; ?>
 
-						</div><!-- .artwork-thumbnails-gallery -->
+						</div><!-- .project-thumbnails-gallery -->
 
 					<?php endif; ?>
 
