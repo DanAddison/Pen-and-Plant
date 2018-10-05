@@ -10,28 +10,31 @@
   margin-bottom: 2em;
   
   .widgettitle {
-    margin-bottom: 1em;
-    text-align: center;
+    max-width: 66.5em;
+    margin: 0 auto;
+    padding: .25em;
+    text-align: left;
     font-size: 1em;
     font-weight: 200;
+    color: $link-color;
     // display: none;
   }
   
   // link:
-  p {
-    max-width: 66.5em;
-    margin: 0 auto;
-    padding-left: .5em;
+  // p {
+  //   max-width: 66.5em;
+  //   margin: 0 auto;
+  //   padding-left: .5em;
 
-    a {
-      color: $link-color;
+  //   a {
+  //     color: $link-color;
       
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-    }
-  }
+  //     &:hover,
+  //     &:focus {
+  //       text-decoration: underline;
+  //     }
+  //   }
+  // }
 
   .instagram-pics {
     // match global max width:

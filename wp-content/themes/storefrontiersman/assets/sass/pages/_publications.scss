@@ -6,6 +6,7 @@
 }
 
 .publication__image img {
+  width: 80%;
   margin-bottom: 2em;
 }
 
@@ -17,15 +18,16 @@
 @media screen and (min-width: $bp_m) {
   
   .publication__image img {
+    width: 100%;
     margin: 0;
   }
 
   .publication__image {
-    width: 40%;
+    width: 35%;
   }
 
   .publication__details {
-    width: 55%;
+    width: 60%;
   }
 }
 
