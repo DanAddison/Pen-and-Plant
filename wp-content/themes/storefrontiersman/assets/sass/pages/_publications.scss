@@ -1,0 +1,41 @@
+.publication {
+  margin-top: 2em;
+  padding: 2em;
+  background-color: $module-color-light;
+  @extend %clearfix;
+}
+
+.publication__image img {
+  margin-bottom: 2em;
+}
+
+.publication__image,
+.publication__details {
+  margin: 0;
+}
+
+@media screen and (min-width: $bp_m) {
+  
+  .publication__image img {
+    margin: 0;
+  }
+
+  .publication__image {
+    width: 40%;
+  }
+
+  .publication__details {
+    width: 55%;
+  }
+}
+
+.publication__title {
+  margin: 0;
+  font-size: 1.75em;
+}
+
+.publication__author {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
