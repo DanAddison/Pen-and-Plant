@@ -25,15 +25,31 @@ get_header(); ?>
 					 */
 					do_action( 'storefront_page' ); ?>
 
-				</article><!-- #post-## -->
+					<?php	if( have_rows('gallery_images') ): ?>
 
-				<?php
-				/**
-				 * Functions hooked in to storefront_page_after action
-				 *
-				 * @hooked storefront_display_comments - 10
-				 */
-				do_action( 'storefront_page_after' ); ?>
+					<div class="gallery">
+
+						<?php	while ( have_rows('gallery_images') ) : the_row(); 
+							$image = get_sub_field('image');
+							$size = 'medium_large';
+							$title = get_sub_field('page_title');
+							$link = get_sub_field('page_url');
+						?>
+
+						<div class="gallery-item">
+							<img src="<?php echo wp_get_attachment_image_url( $image, $size )?>" alt="<?php echo $image['alt']; ?>" class="gallery-item__image">
+							<a href="<?php echo $link; ?>" class="gallery-item__overlay">
+								<div class="gallery-item__title"><?php echo $title; ?></div>
+							</a>
+						</div>
+
+						<?php endwhile; ?>
+
+					</div><!-- gallery -->
+
+					<?php	endif;?>
+
+				</article><!-- #post-## -->
 
 			<?php endwhile; // End of the loop. ?>
 
