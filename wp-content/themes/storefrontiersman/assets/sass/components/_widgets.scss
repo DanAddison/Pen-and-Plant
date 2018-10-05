@@ -7,41 +7,33 @@
 ## Instagram widget
 *********************************************************/
 .instagram-widget {
-  padding: 2em 1em;
-  // margin: 1em;
-  // background-color: $module-color-light;
+  margin-bottom: 3em;
   
   .widgettitle {
     margin-bottom: 1em;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: 200;
     // display: none;
   }
   
   .instagram-pics {
-    // match global max width
+    // match global max width:
     max-width: 66.5em;
     margin: 0 auto;
     list-style: none;
     display: flex;
     flex: 1;
-    flex-wrap: wrap;
     justify-content: center;
 
     img {
       border-radius: 0;
     }
-
-    // stick with 3 images across (not 4 then 5 etc) until screen size can accommodate all in a row
-    @media screen and (min-width: $bp-s) {
-      width: 450px;
-    }
-    
-    @media screen and (min-width: $bp-menu) {
-      flex-wrap: nowrap;
-      width: 100%;
+      
+    @media screen and (max-width: $bp-menu) {
+      li:nth-child(n+7) {  
+        display: none
+      }
     }
   }
 }
