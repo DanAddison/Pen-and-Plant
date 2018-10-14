@@ -23,7 +23,11 @@
 .project-thumbnails-gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 3em;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin: 3em 0;
+  padding: 2em;
+  background-color: $module-color-light;
 
   img {
     padding: 0;

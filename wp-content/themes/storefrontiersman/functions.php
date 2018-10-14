@@ -191,8 +191,11 @@ function da_archive_categories_list() {
 	wp_list_categories( $args );
 	echo '</ul></div>';
 }
-// add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 9 );
+
 add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 9 );
+
+// remove add to cart button on product archives
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 
 // changing number of columns for product category rows, if a 'Shop by Category' section is to be included on main shop page:
 // add_filter( 'storefront_product_categories_args', 'da_product_categories' );

@@ -31,7 +31,7 @@
 
 // main shop page featured images row
 .storefront-product-section.storefront-featured-products {
-  background-color: $base-color;
+  background-color: $module-color-light;
   padding: 50px 60px 0;
   margin-bottom: 5em;
 }
@@ -39,6 +39,7 @@
 li.product img {
   border: 1px solid #f0efef;
 }
+
 
 // restrict maximum width of archive products before they break into columns:
 ul.products li.product {
