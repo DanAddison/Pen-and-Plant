@@ -1,10 +1,9 @@
 <?php
 /**
- * The template for the main portfolio page (currently just the template for displaying all pages including the content-page.php part within it).
+ * The template for the main portfolio page
  *
  * @package storefront
  */
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">

@@ -1,6 +1,6 @@
-.project-page {
+// .project-page {
 
-}
+// }
 
 .project-title {
   font-size: 2em;
@@ -17,20 +17,16 @@
 }
 
 .project-featured-image {
-  margin-bottom: 2em;
+  margin: 4em 0;
 }
 
 .project-thumbnails-gallery {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
-  justify-content: space-between;
-  margin: 3em 0;
-  padding: 2em;
-  background-color: $module-color-light;
+  margin-top: 4em;
 
   img {
-    padding: 0;
     margin: 0;
   }
 }

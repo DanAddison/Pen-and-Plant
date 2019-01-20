@@ -127,7 +127,7 @@ remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 // remove_action( 'storefront_page', 'storefront_page_header', 10 );
 
 // remove sorting dropdown and result count on shop pages entirely (looks ugly, probably not that useful?):
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
@@ -155,26 +155,28 @@ function da_remove_sidebar_class_body( $wp_classes ) {
 	return $wp_classes;
 }
 
+add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 7 );
+
 // Add sections to shop page:
-add_action( 'woocommerce_before_main_content', 'da_shop_page_sections' );
-function da_shop_page_sections() {	
-	if ( is_shop() ) {	
-		add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 8 );
-		// add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 8 );
-	}
-}
+// add_action( 'woocommerce_before_main_content', 'da_shop_page_sections' );
+// function da_shop_page_sections() {	
+// 	if ( is_shop() ) {	
+// 		add_action( 'woocommerce_before_shop_loop', 'storefront_featured_products', 8 );
+// 		// add_action( 'woocommerce_before_shop_loop', 'storefront_product_categories', 8 );
+// 	}
+// }
 
 // change wording of featured products section from 'we recommend':
-add_filter( 'storefront_featured_products_args', 'da_featured_products' );
-function da_featured_products( $args ){
-	$args = array(
-		'limit' => 3,
-		'columns' => 3,
-		'orderby' => 'name',
-		'title'	=> __( 'Featured Products', 'storefront' ),
-	);
-	return $args;
-}
+// add_filter( 'storefront_featured_products_args', 'da_featured_products' );
+// function da_featured_products( $args ){
+// 	$args = array(
+// 		'limit' => 3,
+// 		'columns' => 3,
+// 		'orderby' => 'name',
+// 		'title'	=> __( 'Featured Products', 'storefront' ),
+// 	);
+// 	return $args;
+// }
 
 // add product categories horizontal list on shop archive pages
 function da_archive_categories_list() {
@@ -191,8 +193,6 @@ function da_archive_categories_list() {
 	wp_list_categories( $args );
 	echo '</ul></div>';
 }
-
-add_action( 'woocommerce_before_shop_loop', 'da_archive_categories_list', 9 );
 
 // remove add to cart button on product archives
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
@@ -284,7 +284,7 @@ function da_sub_footer() {
 	<div class="sub-footer">
 
 		<div class="site-legal">
-			<p>&copy; <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?></p>
+			<p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo( 'name' ) ?></p>
 		</div><!-- .site-legal -->
 
 			<nav class="social-navigation" role="navigation" aria-label="<?php esc_html_e( 'Social Navigation', 'storefront' ); ?>">
@@ -299,7 +299,7 @@ function da_sub_footer() {
 			</nav><!-- social-navigation -->
 
 		<div class="site-credit">
-			<p class="credit">Website by <a href="https://www.danaddison.co.uk/">Dan Addison</a></p>
+			<p class="credit">Website by <a href="https://www.danaddisoncreative.com/">Dan Addison</a></p>
 		</div><!-- .site-credit -->
 
 	</div><!-- sub-footer -->

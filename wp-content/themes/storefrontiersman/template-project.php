@@ -4,7 +4,7 @@
  * Template Name: Project
  * 
  * 
- * The template for displaying all project pages (children of Portfolio page). It's currently just the template for displaying all pages including the content-page.php part within it.
+ * The template for displaying all project pages (children of Portfolio page).
  *
  * @package storefront
  */

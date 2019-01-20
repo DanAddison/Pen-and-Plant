@@ -1,3 +1,16 @@
+.page-id-89 {
+
+  .site-content .col-full {
+    max-width: 1500px;
+  }
+
+  .content-area {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
 .gallery {
  margin-top: 3em;
 
@@ -11,8 +24,9 @@
 .gallery-item {
   display: block;
   position: relative;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
+  padding: 1em;
 
   &:hover,
   &:focus {
@@ -23,16 +37,16 @@
   }
 
   @media screen and (min-width: $bp-s) {
-    height: 400px
+    // height: 500px;
   }
 
   @media screen and (min-width: $bp-menu) {
     width: 50%;
-    height: 300px
   }
-
+  
   @media screen and (min-width: $bp-xl) {
-    height: 400px
+    height: 500px;
+    // height: 400px
   }
 }
 
