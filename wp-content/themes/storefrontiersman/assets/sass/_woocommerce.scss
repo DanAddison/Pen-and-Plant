@@ -24,7 +24,7 @@ ul.products li.product {
   }
 }
 
-
+// show product name and price only in overlay on hover
 li.product a {
   position: relative;
   background-color: $module-color;
@@ -82,8 +82,6 @@ li.product a {
   }
 }
 
-
-
 .product_title {
   font-size: 1.75em;
 }
@@ -97,18 +95,44 @@ li.product a {
 }
 
 // main shop page featured images row
-.storefront-product-section.storefront-featured-products {
-  background-color: #c9c9c9;
-  // padding: 50px 60px 0;
-  margin-bottom: 5em;
-}
+// .storefront-product-section.storefront-featured-products {
+//   background-color: #c9c9c9;
+//   margin-bottom: 5em;
+// }
 
-// restrict maximum width of archive products before they break into columns:
+// restrict maximum width of archive products at mobile screen:
 ul.products li.product {
-  max-width: 280px;
+  max-width: 324px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2em;
+
+  @media (min-width: 768px) {
+    margin-bottom: 3em;
+  }
 }
+
+
+// go to two columns before jumping up to the desktop 3 or 4 across
+@media (min-width: 500px) {
+
+  .site-main ul.products li.product {
+    width: 46.411765%;
+    float: left;
+    margin-right: 5.8823529412%;
+  }
+
+  .site-main ul.products li.product:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+	.site-main ul.products li.product:nth-of-type(2n) {
+		margin-right: 5.8823529412%;
+	}
+}
+
 
 // product categories list:
 .menu--categories {
