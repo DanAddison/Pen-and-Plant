@@ -103,3 +103,16 @@ img {
     background-color: $button-color;
   }
 }
+
+// width of content on pages that include sidebar widget
+// bio + contact
+.post-64,
+.post-65 {
+
+  @media (min-width: 1000px) {
+
+    .entry-content {
+      padding-right: 4em;
+    }
+  }
+}

@@ -8,39 +8,22 @@
 *********************************************************/
 .instagram-widget {
   position: relative;
-  margin-bottom: 4em;
-  max-width: 66.5em; // global max-width
   margin-left: auto;
   margin-right: auto;
-  padding: 3em;
   background-color: $module-color-light;
+  max-width: 66.5em; // global max-width
   
-  .widgettitle {
+  // .widgettitle
+  .clear {
     position: absolute;
-    top: 1em;
-    left: 3em;
-    text-align: left;
+    top: -2em;
+    left: .5em;
+    margin-bottom: 1em;
+    text-align: center;
     font-size: 1em;
     font-weight: 200;
     color: $link-color;
-    // display: none;
   }
-  
-  // link:
-  // p {
-  //   max-width: 66.5em;
-  //   margin: 0 auto;
-  //   padding-left: .5em;
-
-  //   a {
-  //     color: $link-color;
-      
-  //     &:hover,
-  //     &:focus {
-  //       text-decoration: underline;
-  //     }
-  //   }
-  // }
 
   .instagram-pics {
     margin: 0 auto;
