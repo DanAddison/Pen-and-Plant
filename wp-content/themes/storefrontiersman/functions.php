@@ -305,3 +305,25 @@ function da_sub_footer() {
 	</div><!-- sub-footer -->
 	<?php
 }
+
+// Deregister core Gutenberg blocks
+function wheelbarrow_allowed_block_types() {
+
+	return array(
+		'core/heading',
+		'core/paragraph',
+		'core/list',
+		'core/quote',
+		'core/image',
+		'core/inline-image',
+		'core/spacer',
+		'core/separator',
+		'core/file',
+		'core/shortcode',
+		'core-embed/facebook',
+		'core-embed/twitter',
+		'core-embed/instagram',
+		);
+}
+
+add_filter( 'allowed_block_types', 'wheelbarrow_allowed_block_types', 10, 2 );

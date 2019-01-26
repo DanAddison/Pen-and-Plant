@@ -48,7 +48,7 @@ get_header(); ?>
 							<?php			
 							$imageArray = get_field('project_featured_image'); // Array returned by Advanced Custom Fields
 							$imageAlt = esc_attr($imageArray['alt']); // Grab, from the array, the 'alt'
-							$imageMediumLargeURL = esc_url($imageArray['sizes']['medium_large']); //grab from the array, the 'sizes', and from it, the 'medium_large'
+							$imageMediumLargeURL = esc_url($imageArray['sizes']['large']); //grab from the array, the 'sizes', and from it, the 'medium_large'
 							?>
 							
 							<div class="project-featured-image">
@@ -58,7 +58,7 @@ get_header(); ?>
 						</div><!-- .project-images container -->
 
 						<div class="project-description">
-							<p><?php the_field('project_description'); ?></p>
+							<p><?php the_content(); ?></p>
 						</div>
 
 						<div class="project-thumbnails-gallery">
