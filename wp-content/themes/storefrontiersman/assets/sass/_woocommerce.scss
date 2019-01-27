@@ -1,3 +1,11 @@
+.storefront-breadcrumb {
+  margin-bottom: 0;
+
+  @media screen and (min-width: $bp-m) {
+    margin-bottom: 2em;
+  }
+}
+
 .woocommerce-products-header {
   text-align: center;
   text-transform: uppercase;
@@ -27,57 +35,64 @@ ul.products li.product {
 // show product name and price only in overlay on hover
 li.product a {
   position: relative;
-  background-color: $module-color;
-
+  
   img {
     transition: all .4s ease;
   }
 
   .woocommerce-loop-product__title {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 1em 1.5em;
-    opacity: 0;
-    transition: all .5s ease;
-    color: white;
+    padding: 1em 1.5em 0;
   }
-
-  .price {
-    position: absolute;
-    top: 75%;
-    transform: translateY(-75%);
-    width: 100%;
-    opacity: 0;
-    transition: all .5s ease;
-    color: white;
-
-    .woocommerce-Price-amount,
-    .woocommerce-Price-currencySymbol {
+  
+  @media (min-width: 1000px) {
+    background-color: $module-color;
+    
+    .woocommerce-loop-product__title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all .5s ease;
+      color: white;
+      // padding: 1em 1.5em;
+    }
+    
+    .price {
+      position: absolute;
+      top: 75%;
+      transform: translateY(-75%);
+      width: 100%;
+      opacity: 0;
+      transition: all .5s ease;
+      color: white;
+      
+      .woocommerce-Price-amount,
+      .woocommerce-Price-currencySymbol {
+        color: white;
+      }
+    }
+    
+    .onsale {
+      position: absolute;
+      top: 80%;
+      transform: translateY(-80%);
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
       color: white;
     }
-  }
-
-  .onsale {
-    position: absolute;
-    top: 80%;
-    transform: translateY(-80%);
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    color: white;
-  }
-
-  &:hover,
-  &:focus {
     
-    img {
-      opacity: .1;
-    }
-    
-    .woocommerce-loop-product__title,
-    .price, .onsale {
-      opacity: 1;
+    &:hover,
+    &:focus {
+      
+      img {
+        opacity: .1;
+      }
+      
+      .woocommerce-loop-product__title,
+      .price, .onsale {
+        opacity: 1;
+      }
     }
   }
 }

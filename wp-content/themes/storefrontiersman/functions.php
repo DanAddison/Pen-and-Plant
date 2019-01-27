@@ -117,28 +117,35 @@ add_action( 'storefront_before_footer', 'da_instagram_widget', 5 );
 add_action( 'init', 'da_remove_storefront_actions' );
 function da_remove_storefront_actions() {
 
-// remove search from header:
-remove_action( 'storefront_header', 'storefront_product_search',	40 );
+	// remove search from header:
+	remove_action( 'storefront_header', 'storefront_product_search',	40 );
 
-// remove secondary menu that usually lives in the header:
-remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
+	// remove secondary menu that usually lives in the header:
+	remove_action( 'storefront_header', 'storefront_secondary_navigation', 30 );
 
-// remove page header when using hero if I want page title inside hero section:
-// remove_action( 'storefront_page', 'storefront_page_header', 10 );
+	// remove page header when using hero if I want page title inside hero section:
+	// remove_action( 'storefront_page', 'storefront_page_header', 10 );
 
-// remove sorting dropdown and result count on shop pages entirely (looks ugly, probably not that useful?):
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
-remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+	// remove sorting dropdown and result count on shop pages entirely (looks ugly, probably not that useful?):
+	// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+	remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
 
-// remove post meta (author card, category, leave a comment link) from posts:
-remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );
-remove_action( 'storefront_single_post', 'storefront_post_meta', 20 );
+	// remove post meta (author card, category, leave a comment link) from posts:
+	remove_action( 'storefront_loop_post', 'storefront_post_meta', 20 );
+	remove_action( 'storefront_single_post', 'storefront_post_meta', 20 );
 
-// remove breadcrumbs:
-remove_action('storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
+
+// Remove breadcrumbs on non-shop pages
+add_action( 'wp', 'wheelbarrow_remove_breadcrumbs' );
+function wheelbarrow_remove_breadcrumbs() {
+	if( ! is_product() ) {
+      remove_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10 );
+    }
+}
+
 
 
 // remove the sidebars on all pages and archives, except those stated:
