@@ -20,9 +20,9 @@ get_header(); ?>
 		</div>
 
 		<div class="links">
-			<div><a href="https://penandplant-staging.danaddison/bio/">Bio</a></div>
-			<div><a href="https://penandplant-staging.danaddison/portfolio/">Portfolio</a></div>
-			<div><a href="https://penandplant-staging.danaddison/shop/">Shop</a></div>
+			<div><a href="/bio/">Bio</a></div>
+			<div><a href="/portfolio/">Portfolio</a></div>
+			<div><a href="/shop/">Shop</a></div>
 		</div>
 
 

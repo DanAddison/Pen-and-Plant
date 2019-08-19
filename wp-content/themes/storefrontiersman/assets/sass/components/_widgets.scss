@@ -6,39 +6,33 @@
 /*********************************************************
 ## Instagram widget
 *********************************************************/
-.instagram-widget {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: $module-color-light;
-  max-width: 66.5em; // global max-width
-  
-  // .widgettitle
-  .clear {
-    position: absolute;
-    top: -2em;
-    left: .5em;
-    margin-bottom: 1em;
-    text-align: center;
-    font-size: 1em;
-    font-weight: 200;
-    color: $link-color;
-  }
+
 
   .instagram-pics {
-    margin: 0 auto;
-    list-style: none;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-      
-    @media screen and (max-width: $bp-menu) {
-      li:nth-child(n+7) {  
-        display: none
-      }
+    // margin: 0 auto;
+    // list-style: none;
+    // display: flex;
+    // flex: 1;
+    // justify-content: center;
+    width: 100%;
+
+    li {
+      float: left;
+      width: 50%;
+      border: 1px solid $module-color-light;
     }
+
+    .clear {
+      display: block;
+      clear: both;
+    }
+      
+    // @media screen and (max-width: $bp-menu) {
+    //   li:nth-child(n+7) {  
+    //     display: none
+    //   }
+    // }
   }
-}
 
 /*********************************************************
 ## Footer Menu widget
